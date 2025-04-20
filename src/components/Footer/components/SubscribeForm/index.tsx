@@ -21,14 +21,14 @@ export default function SubscribeForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="relative">
               <FormControl>
                 <CustomInput placeholder="Enter your email" {...field}>
                   <Button size="sm" type="submit">Subscribe</Button>
                 </CustomInput>
               </FormControl>
-              
-              <FormMessage className="pl-3" />
+
+              <FormMessage className="pl-3 sm:absolute sm:-bottom-5.5" />
             </FormItem>
           )}
         />
