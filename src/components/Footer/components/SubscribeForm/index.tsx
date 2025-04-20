@@ -27,7 +27,8 @@ export default function SubscribeForm() {
                   <Button size="sm" type="submit">Subscribe</Button>
                 </CustomInput>
               </FormControl>
-              <FormMessage />
+              
+              <FormMessage className="pl-3" />
             </FormItem>
           )}
         />
