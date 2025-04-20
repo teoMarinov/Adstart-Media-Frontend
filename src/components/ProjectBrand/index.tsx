@@ -3,13 +3,13 @@ import { ProjectBrandProps } from "./type";
 
 export default function ProjectBrand({ variant = "large" }: ProjectBrandProps) {
   const imageClassName: Record<typeof variant, string> = {
-    large: "size-6 sm:size-8 mr-1.5 sm:mr-3",
-    small: "size-5 sm:size-6 mr-1 sm:mr-2.5"
+    large: "size-8 mr-1.5 sm:mr-3",
+    small: ":size-6 mr-1 sm:mr-2.5"
   }
   
   const labelClassName: Record<typeof variant, string> = {
-    large: "text-[22px] font-extrabold sm:text-3xl",
-    small: "text-[20px] font-extrabold sm:text-2xl"
+    large: "font-extrabold text-3xl",
+    small: "font-extrabold text-2xl"
   }
 
   return (
