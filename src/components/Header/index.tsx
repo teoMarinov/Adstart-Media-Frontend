@@ -2,7 +2,7 @@ import ProjectBrand from "../ProjectBrand";
 
 export default function Header() {
   return (
-    <header className="ml-5 sm:ml-10 my-3 ms:my-5">
+    <header className="pl-5 sm:pl-10 py-3 sm:py-5">
       <ProjectBrand />
     </header>
   );
