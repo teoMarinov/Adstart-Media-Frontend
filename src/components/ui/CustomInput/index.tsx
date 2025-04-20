@@ -47,6 +47,7 @@ export default function CustomInput({
           style={{ paddingRight: inputRightPadding }}
           className={"border border-neutral-300 rounded-full p-4 w-full focus:outline-none shadow-md caret-neutral-500"}
         />
+        
         <div
           ref={childRef}
           className="absolute right-4 top-1/2 transform -translate-y-1/2"
