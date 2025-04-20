@@ -28,7 +28,7 @@ export default function SubscribeForm() {
                 </CustomInput>
               </FormControl>
 
-              <FormMessage className="pl-3 sm:absolute sm:-bottom-5.5" />
+              <FormMessage className="pl-3 md:absolute md:-bottom-5.5" />
             </FormItem>
           )}
         />

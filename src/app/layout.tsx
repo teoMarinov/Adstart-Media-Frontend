@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const headerHeight = 57;
+
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin-ext"],
@@ -21,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} antialiased font-sans`}>
+      <body className={`${dmSans.variable} antialiased font-sans flex flex-col min-h-screen`}>
         <Header />
-        <main>{children}</main>
+        <main className={`flex-grow min-h-[calc(100dvh-${headerHeight}px)] sm:min-h-0`}>{children}</main>
         <Footer />
       </body>
     </html>
