@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
-  subsets: ['latin-ext']
-})
+  subsets: ["latin-ext"],
+});
 
 export const metadata: Metadata = {
   title: "AdStart Media Task",
@@ -19,10 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} antialiased font-sans`}
-      >
-        {children}
+      <body className={`${dmSans.variable} antialiased font-sans`}>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
