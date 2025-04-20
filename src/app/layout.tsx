@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const headerHeight = 57;
+const headerHeight = 60;
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
