@@ -13,7 +13,7 @@ export default function ProjectBrand({ variant = "large" }: ProjectBrandProps) {
   }
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-center md:justify-start">
       <Image
         aria-hidden
         src="/ui/site-icon.svg"
