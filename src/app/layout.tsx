@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const headerHeight = 60;
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Header />
         <main className={`flex-grow min-h-[calc(100vh-${headerHeight}px)]`}>{children}</main>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import {
 } from "@/lib/feature/schema/quoteRequestSchema";
 import { QuoteRequestPriceRange } from "./config";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { openToast } from "@/utils/toast";
 
 export default function useProjectQuoteForm() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -70,12 +71,16 @@ export default function useProjectQuoteForm() {
 
   const currentFormProps = getFormProps();
 
+  const resetForm = () => {
+    firstStepForm.reset();
+    secondStepForm.reset();
+    thirdStepForm.reset();
+    setCurrentStep(1);
+  };
+
   const onFinalSubmit = () => {
     baseApi.post("/quote-request", allFormData).then(() => {
-      firstStepForm.reset();
-      secondStepForm.reset();
-      thirdStepForm.reset();
-      setCurrentStep(1);
+      openToast("Quote request sent successfully!", "Great!", resetForm);
     });
   };
 
