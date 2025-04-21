@@ -23,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} antialiased font-sans flex flex-col min-h-screen h-full md:h-screen`}>
+      <body className={`${dmSans.variable} antialiased font-sans flex flex-col min-h-screen h-full`}>
         <Header />
-        <main className={`flex-grow min-h-[calc(100vh-${headerHeight}px)] sm:min-h-[530px]`}>{children}</main>
+        <main className={`flex-grow min-h-[calc(100vh-${headerHeight}px)]`}>{children}</main>
         <Footer />
       </body>
     </html>

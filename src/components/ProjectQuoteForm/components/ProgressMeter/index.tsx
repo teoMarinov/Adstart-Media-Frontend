@@ -13,7 +13,7 @@ export default function ProgressMeter({
   };
 
   return (
-    <div className="flex w-full items-center mb-4 gap-4 pb-8 border-solid border-b border-neutral-400 px-6">
+    <div className="flex w-full items-center mb-4 gap-2 sm:gap-4 pb-8 border-solid border-b border-neutral-400 px-2 sm:px-6">
       <StepCounter step={1} isReached={currentStep >= 1} />
 
       <Progress value={generateProgressValue(1)} />
