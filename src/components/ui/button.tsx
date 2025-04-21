@@ -11,6 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary text-neutral-100 shadow-xs hover:bg-primary/90 rounded-full cursor-pointer",
+        secondary:
+          "text-primary shadow-xs hover:bg-secondary/90 rounded-full cursor-pointer border-primary border-1",
       },
       size: {
         default: "h-9 px-6 py-2 sm:px-10 sm:py-5 has-[>svg]:px-3",
