@@ -6,17 +6,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import Image from "next/image";
+import { FormFieldCustomInputProps } from "./type";
 import CustomInput from "@/components/ui/CustomInput";
-
-export interface FormFieldCustomInputProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: any;
-  formName: string;
-  formLabel: string;
-  imageSize: number;
-  inputImagePath: string;
-  inputPlaceholder: string;
-}
 
 export default function FormFieldCustomInput({
   control,

@@ -1,26 +1,20 @@
-import { z } from "zod";
 import baseApi from "@/lib/axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-const formSchema = z.object({
-  email: z
-    .string()
-    .nonempty("Email is required")
-    .email("Invalid email address"),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import {
+  subscribeSchema,
+  SubscribeSchemaValues,
+} from "@/lib/feature/schema/subscribeSchema";
 
 export default function UseSubscribeForm() {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<SubscribeSchemaValues>({
+    resolver: zodResolver(subscribeSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = (data: SubscribeSchemaValues) => {
     baseApi.post("/subscribe", data);
   };
 
