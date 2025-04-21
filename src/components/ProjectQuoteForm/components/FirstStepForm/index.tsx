@@ -1,7 +1,7 @@
-import FormFieldCustomInput from "../FormFieldCustomInput";
-import { formLayoutClassName } from "../SecondStepForm/config";
-import StepFormContainer from "../StepFormContainer";
 import { firstStepFormFields } from "./config";
+import { formLayoutClassName } from "../../config";
+import StepFormContainer from "../StepFormContainer";
+import FormFieldCustomInput from "../FormFieldCustomInput";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function FristStepForm({ form }: { form: any }) {
