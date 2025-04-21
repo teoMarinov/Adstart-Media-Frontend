@@ -12,7 +12,9 @@ export default function SecondStepForm({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form: any;
 }) {
-  const [selectgedService, setSelectedOption] = useState("Development");
+  const [selectgedService, setSelectedOption] = useState(
+    form.getValues("service") || "Development"
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChangeSelectedService = (option: string) => {
@@ -37,6 +39,11 @@ export default function SecondStepForm({
     form.setValue("service", value);
   };
 
+  const isOtherSelected =
+    selectgedService !== "Development" &&
+    selectgedService !== "Web Design" &&
+    selectgedService !== "Marketing";
+
   return (
     <>
       <StepFormContainer
@@ -60,7 +67,7 @@ export default function SecondStepForm({
               <SecondStepOptionInput
                 title={"Other"}
                 iconPath={"/ui/other-service-icon.svg"}
-                isSelected={selectgedService === "Other"}
+                isSelected={isOtherSelected}
                 onClick={handleOtherServiceSelect}
               />
             </FormItem>

@@ -8,8 +8,14 @@ import { useState } from "react";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ThirdStepForm({ form }: { form: any }) {
   const [selectedPriceRange, setSelectedPriceRange] = useState(
-    QuoteRequestPriceRange.LOW
+    form.getValues("priceRange") || QuoteRequestPriceRange.LOW
   );
+
+  const handlePriceRangeChange = (value: QuoteRequestPriceRange) => {
+    setSelectedPriceRange(value);
+    
+    form.setValue("priceRange", value);
+  };
 
   return (
     <StepFormContainer
@@ -26,7 +32,7 @@ export default function ThirdStepForm({ form }: { form: any }) {
                 key={option}
                 value={option}
                 isSelected={selectedPriceRange === option}
-                onClick={() => setSelectedPriceRange(option)}
+                onClick={() => handlePriceRangeChange(option)}
               />
             ))}
           </FormItem>
