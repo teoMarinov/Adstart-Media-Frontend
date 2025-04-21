@@ -1,4 +1,5 @@
 import FormFieldCustomInput from "../FormFieldCustomInput";
+import { formLayoutClassName } from "../SecondStepForm/config";
 import StepFormContainer from "../StepFormContainer";
 import { firstStepFormFields } from "./config";
 
@@ -9,17 +10,19 @@ export default function FristStepForm({ form }: { form: any }) {
       heading="Contant details"
       description="Lorem ipsum dolor sit amet consectetur adipisc."
     >
-      {firstStepFormFields.map((field) => (
-        <FormFieldCustomInput
-          key={field.formName}
-          control={form.control}
-          formName={field.formName}
-          formLabel={field.formLabel}
-          imageSize={field.imageSize}
-          inputImagePath={field.inputImagePath}
-          inputPlaceholder={field.inputPlaceholder}
-        />
-      ))}
+      <div className={formLayoutClassName}>
+        {firstStepFormFields.map((field) => (
+          <FormFieldCustomInput
+            key={field.formName}
+            control={form.control}
+            formName={field.formName}
+            formLabel={field.formLabel}
+            imageSize={field.imageSize}
+            inputImagePath={field.inputImagePath}
+            inputPlaceholder={field.inputPlaceholder}
+          />
+        ))}
+      </div>
     </StepFormContainer>
   );
 }
