@@ -6,8 +6,12 @@ import StepFormContainer from "../StepFormContainer";
 import { FormField, FormItem } from "@/components/ui/form";
 import SecondStepOptionInput from "../SecondStepOptionInput";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function SecondStepForm({ form }: { form: any }) {
+export default function SecondStepForm({
+  form,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  form: any;
+}) {
   const [selectgedService, setSelectedOption] = useState("Development");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
