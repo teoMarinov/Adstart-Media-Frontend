@@ -123,7 +123,12 @@ export default function ProjectQuoteForm() {
   const currentFormProps = getFormProps();
 
   const onFinalSubmit = () => {
-    baseApi.post("/quote-request", allFormData);
+    baseApi.post("/quote-request", allFormData).then(() => {
+      firstStepForm.reset();
+      secondStepForm.reset();
+      thirdStepForm.reset();
+      setCurrentStep(1);
+    });
   };
 
   return (
