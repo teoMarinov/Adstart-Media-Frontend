@@ -11,7 +11,7 @@ export default function StepFormContainer({
 
       <p className="text-sm text-neutral-600 mb-6">{description}</p>
 
-      <div className="grid grid-col-1 md:grid-cols-2 gap-4 ">{children}</div>
+      {children}
     </div>
   );
 }
