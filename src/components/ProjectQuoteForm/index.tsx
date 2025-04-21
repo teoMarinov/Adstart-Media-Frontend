@@ -135,7 +135,7 @@ export default function ProjectQuoteForm() {
     <div className="w-full h-fit max-w-2xl">
       <Form {...currentFormProps}>
         <form onSubmit={currentFormProps.handleSubmit(onStepSubmit)}>
-          <Card className="p-8 pb-14 mb-5 mt-4 bg-white shadow-md rounded-3xl border-solid">
+          <Card className="p-5 sm:p-8 pb-14 mb-5 mt-4 bg-white shadow-md rounded-3xl border-solid">
             <ProgressMeter currentStep={currentStep} />
 
             <div className="min-h-[480px] md:min-h-[270px]">
