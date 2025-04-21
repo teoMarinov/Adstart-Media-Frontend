@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AdStart Media Task",
+  title: "Brix Templates",
   description: "AdStart Media Task Frontend.",
 };
 
