@@ -1,7 +1,7 @@
 export const firstStepFormFields = [
     {
         imageSize: 20,
-        formName: "name",
+        formName: "fullname",
         formLabel: "Name",
         inputImagePath: "/ui/person-icon.svg",
         inputPlaceholder: "John Carter",
