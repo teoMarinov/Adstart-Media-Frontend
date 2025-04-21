@@ -1,9 +1,10 @@
-import { FormField, FormItem } from "@/components/ui/form";
-import StepFormContainer from "../StepFormContainer";
-import SecondStepOptionInput from "../SecondStepOptionInput";
 import { useState } from "react";
 import { secondStepFormOptions } from "./config";
+import SecondStepModal from "../SecondStepModal";
 import { formLayoutClassName } from "../../config";
+import StepFormContainer from "../StepFormContainer";
+import { FormField, FormItem } from "@/components/ui/form";
+import SecondStepOptionInput from "../SecondStepOptionInput";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function SecondStepForm({ form }: { form: any }) {
@@ -24,7 +25,7 @@ export default function SecondStepForm({ form }: { form: any }) {
     setIsModalOpen(false);
   };
 
-  const handleOtherServiceSubmit = (value: string) => {
+  const handleModalSubmit = (value: string) => {
     setIsModalOpen(false);
 
     setSelectedOption("Other");
@@ -33,10 +34,11 @@ export default function SecondStepForm({ form }: { form: any }) {
   };
 
   return (
-    <StepFormContainer
-      heading="Our services"
-      description="Please select which service you are interested in."
-    >
+    <>
+      <StepFormContainer
+        heading="Our services"
+        description="Please select which service you are interested in."
+      >
         <FormField
           control={form.control}
           name="service"
@@ -60,6 +62,12 @@ export default function SecondStepForm({ form }: { form: any }) {
             </FormItem>
           )}
         />
-    </StepFormContainer>
+        <SecondStepModal
+          open={isModalOpen}
+          onClose={handleModalClose}
+          onSubmit={handleModalSubmit}
+        />
+      </StepFormContainer>
+    </>
   );
 }
