@@ -37,7 +37,7 @@ Open the `.env` file and set your backend base endpoint.
 By default, it should look like this:
 
 ```env
-VITE_BACKEND_BASE_URL=http://localhost:8080
+NEXT_PUBLIC_BACKEND_BASE_URL=http://localhost:8080
 ```
 
 Replace `http://localhost:8080` if your backend is running on a different URL.
