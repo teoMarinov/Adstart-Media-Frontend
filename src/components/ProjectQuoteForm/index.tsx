@@ -1,27 +1,28 @@
 "use client";
 
+import { z } from "zod";
 import { useState } from "react";
 import { Card } from "../ui/card";
-import { Button } from "../ui/button";
-import ProgressMeter from "./components/ProgressMeter";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "../ui/form";
-import FristStepForm from "./components/FirstStepForm";
-import SecondStepForm from "./components/SecondStepForm";
-import ThirdStepForm from "./components/ThirdStepForm";
+import baseApi from "@/lib/axios";
+import { Button } from "../ui/button";
+import { useForm } from "react-hook-form";
 import ForthStep from "./components/ForthStep";
+import { zodResolver } from "@hookform/resolvers/zod";
+import ProgressMeter from "./components/ProgressMeter";
+import FristStepForm from "./components/FirstStepForm";
+import ThirdStepForm from "./components/ThirdStepForm";
+import SecondStepForm from "./components/SecondStepForm";
 
 export enum QuoteRequestPriceRange {
-  LOW = "$5.000 - $10.000",
-  MEDIUM = "$10.000 - $20.000",
-  HIGH = "$20.000 - $50.000",
+  LOW = "$5.000-$10.000",
+  MEDIUM = "$10.000-$20.000",
+  HIGH = "$20.000-$50.000",
   HIGHEST = "$50.000+",
 }
 
 const quoteRequestSchema = z.object({
-  name: z.string().nonempty("Name is required"),
+  fullname: z.string().nonempty("Name is required"),
   email: z
     .string()
     .nonempty("Email is required")
@@ -41,7 +42,7 @@ const quoteRequestSchema = z.object({
 });
 
 export const firstStepSchema = quoteRequestSchema.pick({
-  name: true,
+  fullname: true,
   email: true,
   phoneNumber: true,
   company: true,
@@ -65,13 +66,13 @@ type StepFormValues =
   | ThirdStepFormValues;
 
 export default function ProjectQuoteForm() {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
   const [allFormData, setAllFormData] = useState({});
 
   const firstStepForm = useForm<FirstStepFormValues>({
     resolver: zodResolver(firstStepSchema),
     defaultValues: {
-      name: "",
+      fullname: "",
       email: "",
       phoneNumber: "",
       company: "",
@@ -122,7 +123,7 @@ export default function ProjectQuoteForm() {
   const currentFormProps = getFormProps();
 
   const onFinalSubmit = () => {
-    console.log(allFormData);
+    baseApi.post("/quote-request", allFormData);
   };
 
   return (

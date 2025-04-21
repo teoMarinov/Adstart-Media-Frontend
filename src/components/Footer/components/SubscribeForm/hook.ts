@@ -1,4 +1,5 @@
 import { z } from "zod";
+import baseApi from "@/lib/axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -19,8 +20,8 @@ export default function UseSubscribeForm() {
     },
   });
 
-  const onSubmit = (values: FormValues) => {
-    console.log(values);
+  const onSubmit = (data: FormValues) => {
+    baseApi.post("/subscribe", data);
   };
 
   return {
