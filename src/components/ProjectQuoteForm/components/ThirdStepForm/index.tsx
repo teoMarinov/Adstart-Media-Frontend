@@ -1,22 +1,12 @@
-import { FormField, FormItem } from "@/components/ui/form";
-import { formLayoutClassName } from "../../config";
+import useThirdStepForm from "./hook";
 import StepFormContainer from "../StepFormContainer";
+import { FormField, FormItem } from "@/components/ui/form";
 import ThirdStepOptionInput from "../ThirdStepOptionInput";
-import { QuoteRequestPriceRange } from "../..";
-import { useState } from "react";
+import { formLayoutClassName, QuoteRequestPriceRange } from "../../config";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ThirdStepForm({ form }: { form: any }) {
-  const [selectedPriceRange, setSelectedPriceRange] = useState(
-    form.getValues("priceRange") || QuoteRequestPriceRange.LOW
-  );
-
-  const handlePriceRangeChange = (value: QuoteRequestPriceRange) => {
-    setSelectedPriceRange(value);
-    
-    form.setValue("priceRange", value);
-  };
-
+  const { selectedPriceRange, handlePriceRangeChange } = useThirdStepForm(form);
   return (
     <StepFormContainer
       heading="Our services"

@@ -1,5 +1,5 @@
-import { Progress } from "@/components/ui/progress";
 import StepCounter from "../StepCounter";
+import { Progress } from "@/components/ui/progress";
 
 export default function ProgressMeter({
   currentStep,
